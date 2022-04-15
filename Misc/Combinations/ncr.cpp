@@ -10,7 +10,7 @@ int ncr(int n, int r)
     else if (n == 1 && r == 1)
         return 1;
 
-    return ncr(n - 1) / (return (ncr(r - 1) * (n - r - 1)));
+    return ncr()
 }
 
 int main()
