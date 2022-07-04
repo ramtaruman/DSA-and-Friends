@@ -20,5 +20,6 @@ Codeforces is more math focused and requires some speed.
 
 ### Books recommendation
 
-CLRS is a very standard choice for algorithms but its usually perceived as a hard read.
-The algorithm design manual or Open Data Structures, both are good.
+If you are super beginner, then Grokking Algorithms.
+
+For more
