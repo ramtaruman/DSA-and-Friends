@@ -1,21 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
+long long moves = 0;
 
-void tower_hanoi(int n, string from, string to, string via)
+void toh(int n, string a, string b, string c) // function with more better indicators for nth disks
 {
-
     if (n == 1)
-        cout << "moving from " << from << " and moving to " << to << endl;
+    {
+        cout << "moving disk from " << a << " to " << c << endl;
+        moves++;
+    }
     else
     {
-        tower_hanoi(n - 1, from, via, to);
-        tower_hanoi(1, from, to, via);
-        tower_hanoi(n - 1, via, to, from);
+        toh(n - 1, a, c, b); // n-1 is moved from a to b using c as aux
+        toh(1, a, b, c);
+        toh(n - 1, b, a, c); // n-1 is moved from b to c using a as aux
+    }
+}
+
+void hanoi(int n, string first, string final, string middle) // primary function also documents moves
+{
+    if (n == 1)
+    {
+        // cout << "Move disk from pole " << from << " to pole " << to << endl;
+        moves++;
+    }
+    else
+    {
+        hanoi(n - 1, first, middle, final);
+        hanoi(1, first, final, middle);
+        hanoi(n - 1, middle, final, first);
     }
 }
 
 int main()
 {
 
-    tower_hanoi(3, "first_tower", "third_tower", "second_tower");
+    toh(3, "first_tower", "final_tower", "middle_tower");
+    cout << "Number of moves taken : " << moves;
 }
