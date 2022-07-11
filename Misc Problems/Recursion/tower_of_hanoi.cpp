@@ -17,7 +17,7 @@ void toh(int n, string a, string b, string c) // function with more better indic
     }
 }
 
-void hanoi(int n, string first, string final, string middle) // primary function also documents moves
+void hanoi(int n, string first, string final, string middle) // primary function also documents moves, consider it to be a b c
 {
     if (n == 1)
     {
@@ -26,15 +26,15 @@ void hanoi(int n, string first, string final, string middle) // primary function
     }
     else
     {
-        hanoi(n - 1, first, middle, final);
-        hanoi(1, first, final, middle);
-        hanoi(n - 1, middle, final, first);
+        hanoi(n - 1, first, middle, final); // moves from a to c via b
+        hanoi(1, first, final, middle);     // jumps back to base statement with a to b via c
+        hanoi(n - 1, middle, final, first); // jumps from c to b via a
     }
 }
 
 int main()
 {
 
-    toh(3, "first_tower", "final_tower", "middle_tower");
+    hanoi(3, "first_tower", "final_tower", "middle_tower");
     cout << "Number of moves taken : " << moves;
 }
