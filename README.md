@@ -22,4 +22,6 @@ Codeforces is more math focused and requires some speed.
 
 If you are super beginner, then Grokking Algorithms.
 
-For more
+For more indepth stuff, CLRS.
+
+For practicing interview problems, CTCI.
