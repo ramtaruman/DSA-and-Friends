@@ -2,7 +2,7 @@
 using namespace std;
 
 // we are required to find the maximum sum of a subarray in the given input array
-int naive_solution(vector<int> arr)
+int naive_solution(vector<int> arr) // n^2
 {
     int res = arr[0];
     for (int i = 0; i < arr.size(); i++)
@@ -16,6 +16,12 @@ int naive_solution(vector<int> arr)
     }
     return res;
 }
+
+int optimal_solution(vector <int> arr)
+{
+
+}
+
 
 int main()
 {
