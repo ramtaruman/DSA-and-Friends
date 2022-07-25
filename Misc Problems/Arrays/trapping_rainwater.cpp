@@ -46,6 +46,37 @@ int trapping_rainwater_optimal(vector<int> arr)
     return res;
 }
 
+void trapping_optimal_fastest(vector<int> arr)
+{
+    int L = 0, R = arr.size() - 1, water_trapped = 0, maxL = arr[L], maxR = arr[R];
+
+    while (L != R)
+    {
+
+        maxR = max(maxR, arr[R]);
+
+        while (L < R)
+        {
+            if (maxL < maxR)
+            {
+
+                L++;
+                maxL = max(maxL, arr[L]);
+                if (maxL - arr[L] > 0)
+                    water_trapped += maxL - arr[L];
+            }
+            else
+
+            {
+                R--;
+                maxR = max(maxR, arr[R]);
+                if (maxR - arr[R] > 0)
+                    water_trapped += maxR - arr[R];
+            }
+        }
+    }
+    cout << water_trapped;
+}
 int main()
 {
     vector<int> arr = {3, 0, 1, 2, 5};

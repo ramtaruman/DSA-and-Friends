@@ -30,6 +30,6 @@ int sol(vector<int> arr, int x)
 int main()
 {
 
-    vector<int> arr = {10, 12, 13, 14, 15, 16, 8, 4};
+    vector<int> arr = {10, 12, 13, 14, 15, 16, 4, 8};
     cout << sol(arr, 8);
 }
